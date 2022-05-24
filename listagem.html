@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Listagem</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar-brand">
+            <img src="./img/logo.png" class="logo" alt="">
+        </a>
+        <!-- Menu Hamburguer -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navegacao -->
+        <div class="collapse navbar-collapse" id="navegacao">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="listagem.html" class="nav-link">Listagem</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cadastro.html" class="nav-link">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sobre.html" class="nav-link">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid mb-5">
+        <div class="row pt-3 pb-3 mt-1 pl-3 bg-dark text-white">
+            <h2>Veja nossos veículos</h2>
+        </div>
+        <form>
+            <div class="row mt-3">
+                <div class="form-group col-12 col-sm-10">
+                    <input class="form-control" type="text" id="pesquisar">
+                </div>
+                <div class="col-12 col-sm-2">
+                    <input class="btn btn-primary col-12" type="submit" value="Buscar">
+                </div>
+            </div>
+        </form>
+        <div class="row mt-5 p-3 border-top">
+            <div class="col-lg-4 text-center">
+                <img src="fotos/gol2012.jpg" alt="Carro Gol 2012" width="320px" height="320px">
+            </div>
+            <div class="col-lg-8 text-left">
+                <p>
+                    <h3>Modelo do veículo</h3>
+                    <strong>Marca:</strong> Volkswagen<br>
+                    <strong>Preço:</strong> R$ 20.800,00<br>
+                    <strong>Cor:</strong> Cinza<br><br>
+                    <p class="text-justify">
+                        Este carro se encontra em perfeito estado de conservação. Por ser um carro usado e de boa procedência,
+                        garantimos a qualidade do veículo e o bom estado do mesmo.
+                    </p>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-end py-3 border-bottom">
+            <input class="btn btn-primary" type="submit" value="Editar">
+            <input class="btn btn-danger ml-2 mr-3" type="submit" value="Excluir">
+        </div>
+        <div class="row p-3">
+            <div class="col-lg-4 text-center">
+                <img src="fotos/bmw320i2010.jpg" alt="Carro BMW 320i" width="320px" height="320px">
+            </div>
+            <div class="col-lg-8 text-left">
+                <p>
+                    <h3>Modelo do veículo</h3>
+                    <strong>Marca:</strong> BMW<br>
+                    <strong>Preço:</strong> R$ 66.800,00<br>
+                    <strong>Cor:</strong> Preto<br><br>
+                    <p class="text-justify">
+                        Se você procura um carro completo com teto solar e tudo que existe de mais atual no mercado 
+                        para garantir conforto e economia ao consumidor, esse carro é pra você!!!
+                    </p>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-end py-3 border-bottom">
+            <input class="btn btn-primary" type="submit" value="Editar">
+            <input class="btn btn-danger ml-2 mr-3" type="submit" value="Excluir">
+        </div>
+        <div class="row p-3">
+            <div class="col-lg-4 text-center">
+                <img src="fotos/civic2010.jpg" alt="Carro Honda Civic" width="320px" height="320px">
+            </div>
+            <div class="col-lg-8 text-left">
+                <p>
+                    <h3>Modelo do veículo</h3>
+                    <strong>Marca:</strong> Honda<br>
+                    <strong>Preço:</strong> R$ 50.500,00<br>
+                    <strong>Cor:</strong> Preto<br><br>
+                    <p class="text-justify">
+                        Excelente carro para quem gosta de viajar e apreciar a vida no conforto de um Honda Civic completo.
+                        Se você procura um carro econômico e confortável, esse carro é pra você!!
+                    </p>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-end py-3 border-bottom">
+            <input class="btn btn-primary" type="submit" value="Editar">
+            <input class="btn btn-danger ml-2 mr-3" type="submit" value="Excluir">
+        </div>
+        <div class="row p-3">
+            <div class="col-lg-4 text-center">
+                <img src="fotos/parati2012.jpg" alt="Carro Parati" width="320px" height="320px">
+            </div>
+            <div class="col-lg-8 text-left">
+                <p>
+                    <h3>Modelo do veículo</h3>
+                    <strong>Marca:</strong> Volkswagen<br>
+                    <strong>Preço:</strong> R$ 34.800,00<br>
+                    <strong>Cor:</strong> Cinza<br><br>
+                    <p class="text-justify">
+                        Ótimo carro para quem busca espaço no porta-malas e conforto para toda a família. Também possui
+                        um visual atual e ar-condicionado integrado. 
+                    </p>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-end py-3 border-bottom">
+            <input class="btn btn-primary" type="submit" value="Editar">
+            <input class="btn btn-danger ml-2 mr-3" type="submit" value="Excluir">
+        </div>
+        <div class="row p-3">
+            <div class="col-lg-4 text-center">
+                <img src="fotos/uno2011.jpg" alt="Carro Uno" width="320px" height="320px">
+            </div>
+            <div class="col-lg-8 text-left">
+                <p>
+                    <h3>Modelo do veículo</h3>
+                    <strong>Marca:</strong> Fiat<br>
+                    <strong>Preço:</strong> R$ 20.400,00<br>
+                    <strong>Cor:</strong> Branco<br><br>
+                    <p class="text-justify">
+                        Esse carro é para pessoas exigentes!!! Possui rádio, câmera de ré, direção hidráulica e tecnologia
+                        que permite a economia de combustível em suas viagens.
+                    </p>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-end py-3 border-bottom">
+            <input class="btn btn-primary" type="submit" value="Editar">
+            <input class="btn btn-danger ml-2 mr-3" type="submit" value="Excluir">
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h4>@ Instituto Federal do Sul de Minas Gerais - IFSULDEMINAS | Campus Poços de Caldas, MG.</h4>
+            </div>
+          </div>
+        </div>
+    </footer>
+</body>
+
+</html>
