@@ -42,7 +42,7 @@ function limpar() {
     document.getElementById('cor').value = 'Cinza';
 }
 function irEditar(){
-    alert('uh');
+    window.location = 'editar.html'
 }
 (function () {
     VMasker(document.getElementById("preco")).maskMoney({ unit: 'R$' });
