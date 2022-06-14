@@ -7,23 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="js/vanilla.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body onload="ir()">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 
         <!-- Logo -->
@@ -68,16 +69,19 @@
                 <div class="form-group col-md-6">
                     <label for="modelo">Modelo:</label>
                     <input class="form-control" type="text" id="modelo" placeholder="Insira o nome do modelo">
+                    <p class="help-block text-danger" id="modelo-span"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="ano">Ano:</label>
                     <input class="form-control" type="text" id="ano" placeholder="Insira o ano do modelo">
+                    <p class="help-block text-danger" id="ano-span"></p>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="preco">Preço:</label>
                     <input class="form-control" type="text" id="preco" placeholder="Insira o preço do modelo">
+                    <p class="help-block text-danger" id="preco-span"></p>
                 </div>
             </div>
             <div class="row">
@@ -99,11 +103,12 @@
                     <label for="mensagem">Descrição</label>
                     <textarea class="form-control" id="descricao" rows="3"
                         placeholder="Insira a descrição do veículo"></textarea>
+                        <p class="help-block text-danger" id="descricao-span"></p>
                 </div>
             </div>
             <div class="row justify-content-end">
-                <input class="btn btn-primary" type="submit" value="Cadastrar Veículo">
-                <input class="btn btn-secondary ml-2 mr-3" type="submit" value="Limpar">
+                <input class="btn btn-primary" onclick="cadastrar()" value="Cadastrar Veículo">
+                <input class="btn btn-secondary ml-2 mr-3" value="Limpar">
             </div>
         </form>
         <div class="text-center mt-5">
@@ -111,44 +116,110 @@
             <h3 class="section-subheading text-muted">Entre em contato para futuras negociações sobre veículos.</h3>
             <br>
             <br>
-            <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Você pode entrar em contato conosco pelo email <a href="mailto:autoforce@gmail.com">autoforce@hotmail.com</a> ou pelo telefone <a href="tel:+553540029822">4002-9822</a></p></div>
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="large text-muted">Você pode entrar em contato conosco pelo email <a
+                        href="mailto:autoforce@gmail.com">autoforce@hotmail.com</a> ou pelo telefone <a
+                        href="tel:+553540029822">4002-9822</a></p>
+            </div>
         </div>
     </div>
     <footer class="footer">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-3 d-none d-lg-block">
-              <img src="img/logo.png" class="logo2" width="142">
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <img src="img/logo.png" class="logo2" width="142">
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">
+                    <h4>Menu</h4>
+                    <ul class="navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listagem.html">Listagem</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2">
+                    <h4>IF SUL DE MINAS</h4>
+                    <ul class="navbar-nav">
+                        <li><a href="https://portal.pcs.ifsuldeminas.edu.br/" target="_blank">Campus Poços de Caldas</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-2 mt-5 mt-sm-0">
+                    <h4>Tabela fipe</h4>
+                    <ul class="navbar-nav">
+                        <li><a href="https://veiculos.fipe.org.br/" target="_blank">Preços</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-3 col-lg-3  mt-5 mt-sm-0 text-center">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.png"></a>
+                    <a href="https://twitter.com/" target="_blank"><img src="img/twitter.png"></a>
+                    <a href="https://instagram.com/" target="_blank"><img src="img/instagram.png"></a>
+                </div>
             </div>
-            <div class="col-6 col-sm-3 col-lg-2">
-              <h4>Menu</h4>
-              <ul class="navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="listagem.html">Listagem</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-sm-3 col-lg-2">
-              <h4>IF SUL DE MINAS</h4>
-              <ul class="navbar-nav">
-                <li><a href="https://portal.pcs.ifsuldeminas.edu.br/" target="_blank">Campus Poços de Caldas</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-sm-3 col-lg-2 mt-5 mt-sm-0">
-              <h4>Tabela fipe</h4>
-              <ul class="navbar-nav">
-                <li><a href="https://veiculos.fipe.org.br/" target="_blank">Preços</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-sm-3 col-lg-3  mt-5 mt-sm-0 text-center">
-                  <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.png"></a>
-                  <a href="https://twitter.com/" target="_blank"><img src="img/twitter.png"></a>
-                  <a href="https://instagram.com/" target="_blank"><img src="img/instagram.png"></a>
-            </div>
-          </div>
         </div>
     </footer>
+    <script>
+        function cadastrar() {
+                if(parseInt(document.getElementById("ano").value) < 1900 || document.getElementById("ano").value == ""){
+                    document.getElementById("ano-span").innerHTML = "Ano Inválido"
+                }else{
+                    document.getElementById("ano-span").innerHTML = " "
+                }
+                if(document.getElementById("modelo").value == ""){
+                    document.getElementById("modelo-span").innerHTML = "Modelo Inválido"
+                }else{
+                    document.getElementById("modelo-span").innerHTML = " "
+                }
+                let preco = '';
+                preco = document.getElementById('preco').value;
+                preco = preco.substring(3)
+                preco = preco.replaceAll('.','')
+                preco = preco.replaceAll(',','.')
+                let precoInt = parseInt(preco)
+                if(precoInt > 100000000){
+                    document.getElementById("preco-span").innerHTML = "Preço Inválido"
+                }else if(document.getElementById("preco").value == ""){
+                    document.getElementById("preco-span").innerHTML = "Preço Inválido"
+                }else{
+                    document.getElementById("preco-span").innerHTML = " "
+                }
+                if(document.getElementById("descricao").value == ""){
+                    document.getElementById("descricao-span").innerHTML = "Modelo Inválido"
+                }else{
+                    document.getElementById("descricao-span").innerHTML = " "
+                }
+
+            }
+        (function () {
+            VMasker(document.getElementById("preco")).maskMoney({ unit: 'R$' });
+            VMasker(document.getElementById("ano")).maskPattern('9999');
+
+            
+            /*
+                        // #maskMoney
+                        VMasker(document.getElementById("default")).maskMoney();
+                        VMasker(document.getElementById("defaultValues")).maskMoney();
+                        VMasker(document.getElementById("zeroCents")).maskMoney({zeroCents: true});
+                        VMasker(document.getElementById("preco")).maskMoney({unit: 'R$'});
+                        VMasker(document.getElementById("suffixUnit")).maskMoney({suffixUnit: 'R$'});
+                        VMasker(document.getElementById("delimiter")).maskMoney({delimiter: ','});
+                        VMasker(document.getElementById("separator")).maskMoney({separator: '.'});
+                        VMasker(document.getElementById("showSignal")).maskMoney({showSignal: true});
+        
+                        // #maskNumber
+                        VMasker(document.getElementById("numbers")).maskNumber();
+        
+                        // #maskPattern
+                        VMasker(document.getElementById("phone")).maskPattern('(99) 9999-9999');
+                        VMasker(document.getElementById("phoneValues")).maskPattern('(99) 9999-9999');
+                        VMasker(document.getElementById("leadingPlus")).maskPattern('+1 (999) 999-9999');
+                        VMasker(document.getElementById("date")).maskPattern('99/99/9999');
+                        VMasker(document.getElementById("doc")).maskPattern('999.999.999-99');
+                        VMasker(document.getElementById("carPlate")).maskPattern('AAA-9999');
+                        VMasker(document.getElementById("vid")).maskPattern('SS.SS.SSSSS.S.S.SSSSSS');*/
+        })();
+    </script>
 </body>
 
 </html>
