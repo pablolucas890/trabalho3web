@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
+    <script src="js/vanilla.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
@@ -59,25 +60,28 @@
                 <div class="form-group col-md-6">
                     <label for="marca">Marca:</label>
                     <select class="form-control" id="marca">
-                        <option>Volkswagen</option>
-                        <option>Fiat</option>
-                        <option>Honda</option>
-                        <option>BMW</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Fiat">Fiat</option>
+                        <option value="Honda">Honda</option>
+                        <option value="BMW">BMW</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="modelo">Modelo:</label>
                     <input class="form-control" type="text" id="modelo" placeholder="Insira o nome do modelo">
+                    <p class="help-block text-danger" id="modelo-span"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="ano">Ano:</label>
                     <input class="form-control" type="text" id="ano" placeholder="Insira o ano do modelo">
+                    <p class="help-block text-danger" id="ano-span"></p>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="preco">Preço:</label>
                     <input class="form-control" type="text" id="preco" placeholder="Insira o preço do modelo">
+                    <p class="help-block text-danger" id="preco-span"></p>
                 </div>
             </div>
             <div class="row">
@@ -88,9 +92,9 @@
                 <div class="form-group col-md-6">
                     <label for="cor">Cor:</label>
                     <select class="form-control" id="cor">
-                        <option>Cinza</option>
-                        <option>Preto</option>
-                        <option>Branco</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
                     </select>
                 </div>
             </div>
@@ -99,11 +103,12 @@
                     <label for="mensagem">Descrição</label>
                     <textarea class="form-control" id="descricao" rows="3"
                         placeholder="Insira a descrição do veículo"></textarea>
+                        <p class="help-block text-danger" id="descricao-span"></p>
                 </div>
             </div>
             <div class="row justify-content-end">
-                <input class="btn btn-success" type="submit" value="Salvar Edição">
-                <input class="btn btn-secondary ml-2 mr-3" type="submit" value="Limpar">
+                <input class="btn btn-success" type="button" onclick="cadastrar()" value="Salvar Edição">
+                <input class="btn btn-secondary ml-2 mr-3" type="button" onclick="limpar()" value="Limpar">
             </div>
         </form>
         <div class="text-center mt-5">
@@ -150,5 +155,6 @@
         </div>
     </footer>
 </body>
-
+<script src="js/script.js">
+</script>
 </html>

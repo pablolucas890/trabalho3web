@@ -60,10 +60,10 @@
                 <div class="form-group col-md-6">
                     <label for="marca">Marca:</label>
                     <select class="form-control" id="marca">
-                        <option>Volkswagen</option>
-                        <option>Fiat</option>
-                        <option>Honda</option>
-                        <option>BMW</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Fiat">Fiat</option>
+                        <option value="Honda">Honda</option>
+                        <option value="BMW">BMW</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
@@ -92,9 +92,9 @@
                 <div class="form-group col-md-6">
                     <label for="cor">Cor:</label>
                     <select class="form-control" id="cor">
-                        <option>Cinza</option>
-                        <option>Preto</option>
-                        <option>Branco</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Branco">Branco</option>
                     </select>
                 </div>
             </div>
@@ -103,12 +103,12 @@
                     <label for="mensagem">Descrição</label>
                     <textarea class="form-control" id="descricao" rows="3"
                         placeholder="Insira a descrição do veículo"></textarea>
-                        <p class="help-block text-danger" id="descricao-span"></p>
+                    <p class="help-block text-danger" id="descricao-span"></p>
                 </div>
             </div>
             <div class="row justify-content-end">
-                <input class="btn btn-primary" onclick="cadastrar()" value="Cadastrar Veículo">
-                <input class="btn btn-secondary ml-2 mr-3" value="Limpar">
+                <input class="btn btn-primary" onclick="cadastrar()" type="button" value="Cadastrar Veículo">
+                <input class="btn btn-secondary ml-2 mr-3" onclick="limpar()" type="button" value="Limpar">
             </div>
         </form>
         <div class="text-center mt-5">
@@ -159,67 +159,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        function cadastrar() {
-                if(parseInt(document.getElementById("ano").value) < 1900 || document.getElementById("ano").value == ""){
-                    document.getElementById("ano-span").innerHTML = "Ano Inválido"
-                }else{
-                    document.getElementById("ano-span").innerHTML = " "
-                }
-                if(document.getElementById("modelo").value == ""){
-                    document.getElementById("modelo-span").innerHTML = "Modelo Inválido"
-                }else{
-                    document.getElementById("modelo-span").innerHTML = " "
-                }
-                let preco = '';
-                preco = document.getElementById('preco').value;
-                preco = preco.substring(3)
-                preco = preco.replaceAll('.','')
-                preco = preco.replaceAll(',','.')
-                let precoInt = parseInt(preco)
-                if(precoInt > 100000000){
-                    document.getElementById("preco-span").innerHTML = "Preço Inválido"
-                }else if(document.getElementById("preco").value == ""){
-                    document.getElementById("preco-span").innerHTML = "Preço Inválido"
-                }else{
-                    document.getElementById("preco-span").innerHTML = " "
-                }
-                if(document.getElementById("descricao").value == ""){
-                    document.getElementById("descricao-span").innerHTML = "Modelo Inválido"
-                }else{
-                    document.getElementById("descricao-span").innerHTML = " "
-                }
-
-            }
-        (function () {
-            VMasker(document.getElementById("preco")).maskMoney({ unit: 'R$' });
-            VMasker(document.getElementById("ano")).maskPattern('9999');
-
-            
-            /*
-                        // #maskMoney
-                        VMasker(document.getElementById("default")).maskMoney();
-                        VMasker(document.getElementById("defaultValues")).maskMoney();
-                        VMasker(document.getElementById("zeroCents")).maskMoney({zeroCents: true});
-                        VMasker(document.getElementById("preco")).maskMoney({unit: 'R$'});
-                        VMasker(document.getElementById("suffixUnit")).maskMoney({suffixUnit: 'R$'});
-                        VMasker(document.getElementById("delimiter")).maskMoney({delimiter: ','});
-                        VMasker(document.getElementById("separator")).maskMoney({separator: '.'});
-                        VMasker(document.getElementById("showSignal")).maskMoney({showSignal: true});
-        
-                        // #maskNumber
-                        VMasker(document.getElementById("numbers")).maskNumber();
-        
-                        // #maskPattern
-                        VMasker(document.getElementById("phone")).maskPattern('(99) 9999-9999');
-                        VMasker(document.getElementById("phoneValues")).maskPattern('(99) 9999-9999');
-                        VMasker(document.getElementById("leadingPlus")).maskPattern('+1 (999) 999-9999');
-                        VMasker(document.getElementById("date")).maskPattern('99/99/9999');
-                        VMasker(document.getElementById("doc")).maskPattern('999.999.999-99');
-                        VMasker(document.getElementById("carPlate")).maskPattern('AAA-9999');
-                        VMasker(document.getElementById("vid")).maskPattern('SS.SS.SSSSS.S.S.SSSSSS');*/
-        })();
-    </script>
 </body>
-
+<script src="js/script.js">
+</script>
 </html>
