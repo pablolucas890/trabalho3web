@@ -1,12 +1,16 @@
 function cadastrar() {
+    let erro = false;
+
     if (parseInt(document.getElementById("ano").value) < 1900 || document.getElementById("ano").value == "") {
         document.getElementById("ano-span").innerHTML = "Ano Inválido"
+        erro = true;
     } else {
         document.getElementById("ano-span").innerHTML = " "
     }
 
     if (document.getElementById("modelo").value == "") {
         document.getElementById("modelo-span").innerHTML = "Modelo Inválido"
+        erro = true;
     } else {
         document.getElementById("modelo-span").innerHTML = " "
     }
@@ -20,16 +24,23 @@ function cadastrar() {
 
     if (precoInt > 100000000) {
         document.getElementById("preco-span").innerHTML = "Preço Inválido"
+        erro = true;
     } else if (document.getElementById("preco").value == "") {
         document.getElementById("preco-span").innerHTML = "Preço Inválido"
+        erro = true;
     } else {
         document.getElementById("preco-span").innerHTML = " "
     }
 
     if (document.getElementById("descricao").value == "") {
-        document.getElementById("descricao-span").innerHTML = "Descrição Inválido"
+        document.getElementById("descricao-span").innerHTML = "Descrição Inválida"
+        erro = true;
     } else {
         document.getElementById("descricao-span").innerHTML = " "
+    }
+    if(!erro){
+        alert('Dados Enviados com Sucesso')
+        window.location = 'index.html'
     }
 }
 function limpar() {
